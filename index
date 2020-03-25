@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIMBAD Fun And Santuy 8</title>
+  <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/social-media-emoji/56/Haha_Emoji-512.png"/>
+  <meta name="description" content="PMB Raharja"/>
+  <meta name="keywords" content="PMB Raharja"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="stylee.css"/>
+</head>
+<body>
+  
+  <header>
+  <h1><a href="#">Challenge SIMBAD</small></a>
+  </header>
+  
+  <main>
+    
+    <center><h2>Challege SIMBAD DL201C</h2></center>
+    <br>
+    <center><h1 style="display:block;">Display Data From Database</h1></center>
+    <center><h2>Fun And Santuy</h2></center>
+    <br>
+   <input id="tab1" type="radio" name="tabs" checked>
+    <label for="tab1">Praktikum 1 dan 2</label>
+  <input id="tab2" type="radio" name="tabs" checked>
+    <label for="tab2">Praktikum 3</label>
+  <input id="tab3" type="radio" name="tabs" checked>
+    <label for="tab3">Praktikum 4</label>
+  <input id="tab4" type="radio" name="tabs" checked>
+    <label for="tab4">Praktikum 5</label>
+  <input id="tab5" type="radio" name="tabs" checked>
+    <label for="tab5">Praktikum 6</label>
+  <a style="border-bottom:2px solid #000;float:left;width:100%;"></a><br>
+ 
+  <br>
+    
+<section id="content1">
+ 
+  <div style="overflow-x:auto;">
+  <table align="center">
+    <caption style="margin: 0; font-weight: bold; font-size: 1.3em; background: #eee;padding: 10px;
+                    border: 1px solid #ddd;">Table Calon Mahasiswa</caption>
+   <tr> 
+      <th> Nama</th>
+      <th> Email </th>
+      <th> No Hp</th>
+  </tr>
+    
+    
+		<?php
+		
+    //JANGAN DIHAPUS YA FMLENYA
+    
+    // INI ADALAH FILE KONEKSI HARAP TIDAK DIHAPUS
+	  include "/home/simbadalphabet/public_html/config/koneksi_dl201c_8.php";
+    
+    
+    //INI ADALAH SYNTAX QUERY SQL SILAHKAN KERJAKAN DIBAWAH INI
+    $query_pg = pg_query ('select * from calon_mahasiswa ');
+    while($data = pg_fetch_assoc($query_pg)){
+     ?>
+     <tr>
+      
+      <td><?php echo $data ['nama'];?></td>
+      <td><?php echo $data ['email'];?></td>
+     <td><?php echo $data ['no_hp'];?></td>
+    </tr> 
+    <?php }   
+     ?>
+  </table>
+  </div>
+  </section>
+    
+    <section id="content2">
+      <div style="overflow-x:auto;">
+     <table align="center">
+       <caption caption style="margin: 0; font-weight: bold; font-size: 1.3em; background: #eee;padding: 10px;
+                    border: 1px solid #ddd;">Table Mahasiswa</caption>
+   <tr> 
+      <th> Nama Lengkap</th>
+      <th> Tanggal Lahir</th>
+      <th> Jenis Kelamin</th>
+     <th> Email</th>
+     <th> No Hp</th>
+       </tr>
+    
+    
+		<?php
+		
+    //JANGAN DIHAPUS YA FMLENYA
+    
+    // INI ADALAH FILE KONEKSI HARAP TIDAK DIHAPUS
+	  include "/home/simbadalphabet/public_html/config/koneksi_dl201c_8.php";
+    
+    
+    //INI ADALAH SYNTAX QUERY SQL SILAHKAN KERJAKAN DIBAWAH INI
+    $query_pg = pg_query ('select * from mahasiswa ');
+    while($data = pg_fetch_assoc($query_pg)){
+     ?>
+     <tr>
+      
+      <td><?php echo $data ['nama_lengkap'];?></td>
+      <td><?php echo $data ['tanggal_lahir'];?></td>
+      <td><?php echo $data ['jenis_kelamin'];?></td>
+       <td><?php echo $data ['email'];?></td>
+       <td><?php echo $data ['no_hp'];?></td>
+    </tr> 
+    <?php }   
+     ?>
+   </table>
+      </div>
+    </section>
+   
+   <section id="content3">
+     <div style="overflow-x:auto;">
+     <table align="center"> 
+     <caption caption style="margin: 0; font-weight: bold; font-size: 1.3em; background: #eee;padding: 10px;
+                    border: 1px solid #ddd;">Table Dosen</caption>
+   <tr> 
+      <th> ID</th>
+      <th> NID</th>
+      <th> Nama Dosen</th>
+      <th> Alamat</th>
+     <th> Usia</th>
+
+  </tr>
+    
+    
+		<?php
+		
+    //JANGAN DIHAPUS YA FMLENYA
+    
+    // INI ADALAH FILE KONEKSI HARAP TIDAK DIHAPUS
+	  include "/home/simbadalphabet/public_html/config/koneksi_dl201c_8.php";
+    
+    
+    //INI ADALAH SYNTAX QUERY SQL SILAHKAN KERJAKAN DIBAWAH INI
+    $query_pg = pg_query ("select * from dosen where alamat = 'Tangerang'");
+    while($data = pg_fetch_assoc($query_pg)){
+     ?>
+     <tr>
+      <td><?php echo $data ['id'];?></td>
+      <td><?php echo $data ['nid_dosen'];?></td>
+      <td><?php echo $data ['nama_dosen'];?></td>
+      <td><?php echo $data ['alamat'];?></td>
+      <td><?php echo $data ['usia'];?></td>
+    </tr> 
+    <?php }   
+     ?>  
+     </table>
+     </div>
+    </section>
+       
+         <section id="content4">
+           <div style="overflow-x:auto;">
+ <table align="center"> 
+ <caption caption style="margin: 0; font-weight: bold; font-size: 1.3em; background: #eee;padding: 10px;
+                    border: 1px solid #ddd;">Table Konsentrasi</caption>
+   <tr> 
+      <th> ID Konsentrasi</th>
+      <th> Nama Konsentrasi</th>
+
+  </tr>
+    
+    
+		<?php
+		
+    //JANGAN DIHAPUS YA FMLENYA
+    
+    // INI ADALAH FILE KONEKSI HARAP TIDAK DIHAPUS
+	  include "/home/simbadalphabet/public_html/config/koneksi_dl201c_8.php";
+    
+    
+    //INI ADALAH SYNTAX QUERY SQL SILAHKAN KERJAKAN DIBAWAH INI
+    $query_pg = pg_query ("select * from konsentrasi");
+    while($data = pg_fetch_assoc($query_pg)){
+     ?>
+     <tr>
+      <td><?php echo $data ['id_konsentrasi'];?></td>
+      <td><?php echo $data ['nama_konsentrasi'];?></td>
+    </tr> 
+    <?php }   
+     ?>
+             </table>
+           </div>
+    <br>
+  <table align="center"> 
+    <div style="overflow-x:auto;">
+    <caption caption style="margin: 0; font-weight: bold; font-size: 1.3em; background: #eee;padding: 10px;
+                    border: 1px solid #ddd;">Table Siswa</caption>
+   <tr> 
+      <th> NIM</th>
+      <th> Nama</th>
+      <th> Email</th>
+      <th> Konsentrasi</th>
+
+  </tr>
+    
+    
+		<?php
+		
+    //JANGAN DIHAPUS YA FMLENYA
+    
+    // INI ADALAH FILE KONEKSI HARAP TIDAK DIHAPUS
+	  include "/home/simbadalphabet/public_html/config/koneksi_dl201c_8.php";
+    
+    
+    //INI ADALAH SYNTAX QUERY SQL SILAHKAN KERJAKAN DIBAWAH INI
+    $query_pg = pg_query ("select * from siswa");
+    while($data = pg_fetch_assoc($query_pg)){
+     ?>
+     <tr>
+      <td><?php echo $data ['nim'];?></td>
+      <td><?php echo $data ['nama'];?></td>
+      <td><?php echo $data ['email'];?></td>
+      <td><?php echo $data ['konsentrasi'];?></td>
+    </tr> 
+    <?php }   
+     ?>
+      
+             </table>
+    </div>
+    </section>
+    
+    <section id="content5">
+    <div style="overflow-x:auto;">
+    <table align="center"> 
+      <caption caption style="margin: 0; font-weight: bold; font-size: 1.3em; background: #eee;padding: 10px;
+                    border: 1px solid #ddd;">Table Mahasiswa 2</caption>
+   <tr> 
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Kota</th>
+
+  </tr>
+    
+    
+		<?php
+		
+    //JANGAN DIHAPUS YA FMLENYA
+    
+    // INI ADALAH FILE KONEKSI HARAP TIDAK DIHAPUS
+	  include "/home/simbadalphabet/public_html/config/koneksi_dl201c_8.php";
+    
+    
+    //INI ADALAH SYNTAX QUERY SQL SILAHKAN KERJAKAN DIBAWAH INI
+    $query_pg = pg_query ("select DISTINCT mhs_nim,mhs_nama,mhs_kota from mahasiswa2 WHERE mhs_kota = 'Jakarta' order by mhs_nama desc");
+    while($data = pg_fetch_assoc($query_pg)){
+     ?>
+     <tr>
+      <td><?php echo $data ['mhs_nim'];?></td>
+      <td><?php echo $data ['mhs_nama'];?></td>
+      <td><?php echo $data ['mhs_kota'];?></td>
+    </tr> 
+    <?php }   
+     ?>
+  </table>
+      </div>
+    </section>
+    
+   </main>
+    
+  <br>
+    <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:5px;">© copyright Kelompok 8</div>
+    
+  </body>
+  
+</html>
