@@ -1,0 +1,132 @@
+body{
+		margin:0;
+		font:600 16px/18px 'Open Sans',sans-serif;
+    background-color:#008000;
+    width: 100%;
+}
+*,:after,:before{box-sizing:border-box}
+		.clearfix:after,.clearfix:before{content:'';display:table}
+		.clearfix:after{clear:both;display:block}
+		a{color:inherit;text-decoration:none}
+
+header{
+		background:grey;
+		padding: 10px 20px;
+		margin-bottom: 0;
+		position: relative;
+		z-index: 10;
+		overflow: hidden;
+    width:100%;
+}
+header a{
+		color: #dddddd;
+		text-decoration: none;
+	}
+	header a:hover{
+		color:#0F9;
+	}
+	header h1{
+		margin-top:20px;
+		margin-left:80px;
+		font-family:"Trebuchet MS", Arial, Helvetica, 		sans-serif;
+	}
+		a{
+  		text-decoration: none;
+  		color: #000;
+	}
+		a:hover{
+  		color: #B7977B;
+	}
+
+main {
+		color:#000;
+		background:#CCC;
+    float: left;
+    width:100%;
+    padding:0 ;
+    margin: 20px auto;
+ 		box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    overflow:hidden;
+  
+	}
+
+table{
+		border-color: collapse;
+		text-align:center;
+		background-color:#CCC;
+		border-style:hidden;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+	table th{
+		text-align:center;
+		background-color:#333; 
+		color: #FFF;
+		padding: 4px 30px 4px 8px;
+	}
+	table td{
+		border: 1px solid#e3e3e3;
+		padding: 4px 8px;
+		border-style:hidden;
+	}
+	table tr:nth-child(odd) td{
+		background-color: #e7edf0;
+	}
+.logo{
+		float:right;
+	}
+	p {
+ 		font-size: 13px;
+	}
+	/* Important code */
+	input, section {
+  		clear: both;
+  		padding-top: 15px;
+  		display: none;
+      width:100%;
+	}
+	label {
+  		font-weight: bold;
+  		font-size: 15px;
+  		display: block;
+  		float: left;
+      width:100%;
+  		padding: 15px 25px;
+  		border-top: 3px solid transparent;
+  		border-right: 2px solid transparent;
+  		border-left: 2px solid transparent;
+  		border-bottom: 2px solid #DDD;
+	}
+	label:hover {
+  		cursor: pointer;
+  		text-decoration: underline;
+	}
+	#tab1:checked ~ #content1,
+  #tab2:checked ~ #content2, 
+  #tab3:checked ~ #content3, 
+  #tab4:checked ~ #content4, 
+  #tab5:checked ~ #content5{
+  	display: block;
+    width: 100%;
+	}
+	input:checked + label {
+  		border-top-color: #B7977B;
+  		border-right-color: #DDD;
+  		border-left-color: #DDD;
+  		border-bottom-color: transparent;
+  		text-decoration: none;
+	}
+
+header{
+		background:grey;
+		padding: 10px 20px;
+		margin-bottom: 0;
+		position: relative;
+		z-index: 10;
+		overflow: hidden;
+}
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
